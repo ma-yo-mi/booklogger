@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
 
-  resources :books, only: [:show] do
+  resources :books, only: [:index, :show] do
     collection do
       get 'search_result'
     end

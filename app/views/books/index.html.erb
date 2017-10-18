@@ -10,8 +10,6 @@
   <div id="page" class="hfeed site">
   <header id="header">
     <h1>BOOK LOGGER</h1>
-
-
   </header>
 
   <div id="primary" class="content-area">
@@ -38,38 +36,39 @@
             <input type="search" class="search-field" placeholder="作品名・著者名・出版社名で検索してみよう" value="" name="s">
             <input type="submit" class="search-submit" value="検索">
           </form>
-          </div>
           </ul>
         </nav>
       </div>
-<!-- navbar -->
 
-  <div class="left-container">
-  </div>
+      <div class="left-container">
+        <div class="title-bord">
+        <h4>BLANK AS OF NOW</h4><h6 style="font-size: 10px; color: black; margin: 0;">NOT YET DECIDED</h6>
+        </div>
+      </div>
+      <div class="middle-container">
+        <div class="title-bord">
+        <h4>月間ランキング TOP5</h4><h6 style="font-size: 10px; color: black; margin: 0;">紀伊国屋書店マンスリーランキングより</h6>
+        </div>
+        <ul class="ranking list">
+        <% @books.each do |book| %>
+          <li class="ranks">
+          <div class="rankdetail">
+          <h3><%= book.ranking %>位</h3>
+          <a href="/books/<%= book.id %>"></a>
+          <h5><%= book.bookname %></h5><h6><%= book.author %></h6><h6><%= book.publisher %></h6>
+          </div>
+          </li>
+        <% end %>
+        </ul>
+      </div>
 
-  <div class="middle-container">
-  </div>
-  <p>ランキング</p>
-    <ul>
-      <li>
-
-      </li>
-    </ul>
-  <div class="right-container">
-  <p>新刊情報</p>
-  </div>
-
-
-
-
-
-<!-- body -->
+    </main>
 
     <footer id="footer">
       <div class="credits">
-        <p>Copyright 2017 Book Logger(test). All rights reserved.</p>
-          </div>
+        <p style="font-size:8px;">Copyright 2017 Book Logger(test). All rights reserved.</p>
+      </div>
     </footer>
   </div>
 </body>
-<!-- footer -->
+

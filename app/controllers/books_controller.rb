@@ -1,7 +1,6 @@
 class BooksController < ApplicationController
-
   def index
-    @books = Book.order('id ASC').limit(20)
+    @books = Book.order('id ASC').limit(5)
   end
 
   def show
