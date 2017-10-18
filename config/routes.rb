@@ -1,22 +1,19 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  resources :books
-
-  get 'signup' => 'user#new'
   root    'books#index'
-  # get   'users/:id'   =>  'users#show'
 
+  resources :users, only: [:show, :create] do
+    resources :reviews, only: [:create]
+  end
+
+
+  resources :books, only: [:index, :show] do
+    collection do
+      get 'search_result'
+    end
+  end
 end
 
-
-
-  # devise_for :users, :controllers => {
-  #   :registrations => 'users/registrations',
-  #   :sessions => 'users/sessions'
-  # }
-
-  # devise_scope :user do
-  #   get "sign_in", :to => "users/sessions#new"
-  #   get "sign_out", :to => "users/sessions#destroy"
-  # end
+  # get 'signup' => 'user#new'
+  # get   'users/:id'   =>  'users#show'
