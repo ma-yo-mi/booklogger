@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+
   def index
     @books = Book.order('id ASC').limit(20)
   end
@@ -7,19 +8,13 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
 
-  def new
-
-  end
-
-  def create
-
-  end
 
 
-def search
-  @books = []
+def search_result
+  @books = Book.search(params[:q])
+  render "index"
 end
 
-  private
+
 
 end

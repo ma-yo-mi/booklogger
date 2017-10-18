@@ -31,54 +31,39 @@
             </a></li>
 
             <li class="page_item">
-            <%= link_to "ログイン", new_user_session_path, class: 'post' %></li>
+            <%= link_to "ログイン", new_user_registration_path, class: 'post' %></li>
             <li class="page_item">
-            <%= link_to "ログアウト", new_user_registration_path, class: 'post' %></li>
-
+            <%= link_to "ログアウト", root_path, class: 'post' %></li>
+          <form role="search" method="get" class="search-form" action="">
+            <input type="search" class="search-field" placeholder="作品名・著者名・出版社名で検索してみよう" value="" name="s">
+            <input type="submit" class="search-submit" value="検索">
+          </form>
+          </div>
           </ul>
-      <form role="search" method="get" class="search-form">
-        <div class="searchbox">
-          <input type="search" class="search-field" placeholder="作品名・作家名で検索">
-          <input type="submit" class="search-submit" value="submit">
-        </div>
-      </form>
-      </nav>
-    </main>
-  </div><!-- #primary -->
+        </nav>
+      </div>
+<!-- navbar -->
 
-  <div class="container">
-    <div class="top-container">
-      <image></image>
-  <div class="container mm-container">
-    <div class="left-container">
-    <h3>most commented reviews</h3>
-    </div>
-  <div class="container mm-container">
-    <div class="middle-container">
-      <h3>ranking TOP 5</h3>
-        <ul>
-        <% @book.each do |product| %>
-          <li class="page_item"><a href="/books/<%= book.id %>"><div class="thumbnail_figure" style="background-image:url(<%= book.image %>)"></div></a>
-            <div class="tumbnail_caption">
-            <h5 class="text-small" title="<%= book.title %>">
-              <%= book.title %></h5>
-              <p class="text-small">
-                <span class="rating-star">
-                  <i class="star-rate-[ここに評価を表示]0"></i>
-                </span>
-              </p>
-            </div>
-          </li>
-        <% end %>
-        </ul>
-    </div>
-  <div class="container mm-container">
-    <div class="right-container">
-      <h3>new release info</h3>
-    </div>
-
+  <div class="left-container">
   </div>
 
+  <div class="middle-container">
+  </div>
+  <p>ランキング</p>
+    <ul>
+      <li>
+
+      </li>
+    </ul>
+  <div class="right-container">
+  <p>新刊情報</p>
+  </div>
+
+
+
+
+
+<!-- body -->
 
     <footer id="footer">
       <div class="credits">
@@ -87,3 +72,4 @@
     </footer>
   </div>
 </body>
+<!-- footer -->
