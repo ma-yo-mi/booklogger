@@ -155,8 +155,8 @@ form.search-form { position: absolute;
 form.search-form input.search-field {
   width: 60%;
   margin: 0 0 0 5em; }
-form.search-form input.search-submit {
-  margin: 0 auto; padding: 0 20px; background: #8BC34A; color: #fff; }
+/*form.search-form input.search-submit {
+  margin: 0 auto; padding: 0 20px; background: #8BC34A; color: #fff; }*/
 /*form.search-form input.search-submit {
   display: none; }*/
 form.searchbox {
@@ -181,7 +181,7 @@ form.searchbox {
   vertical-align:baseline;
   text-rendering:auto }
 
-
+/*RESEARCH PAGE*/
 .title-bord {
 padding: 0.5em 1em;
 margin: 0.5em 0;
@@ -234,3 +234,37 @@ border-radius: 9px;
   margin: 0;
 }
 
+/*BOOK INFO PAGE*/
+.full-container {
+  dusplay: inline-flex;
+  max-height: 1000px;
+  width: 90%;
+  max-height:90%;
+  margin: 2em 0.5em;
+}
+
+.header_info {
+padding: 0.1em 1em;
+margin: 0.5em 0;
+color: #FFF;
+background: #FF395E;
+border-bottom: solid 6px #6F6F6F;
+box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+border-radius: 9px;
+}
+
+.header_info h4 {
+  text-align: center;
+}
+.header_info i {
+  text-align: left;
+  color: black;
+}
+
+.imagecontainer {
+  float: left;
+}
+
+imagecontainer p {
+  padding: 1em;
+}
