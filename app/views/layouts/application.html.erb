@@ -10,6 +10,7 @@
     </meta>
   </head>
   <body class="yj950-2">
+  <%= render 'layouts/header' %>
     <div id="wrapper">
       <div id="yjContentsHeader">
         <nav class="globalnav">
@@ -29,6 +30,10 @@
             <% end %>
 
             <%= yield %>
+  </div>
+  </div>
+  </div>
+<%= render 'layouts/footer' %>
 
 </body>
 </html>
