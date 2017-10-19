@@ -7,39 +7,6 @@
 </head>
 
 <body>
-  <div id="page" class="hfeed site">
-  <header id="header">
-    <h1>BOOK LOGGER</h1>
-  </header>
-
-  <div id="primary" class="content-area">
-    <main id="main" class="site-main">
-
-      <div id="upperbar-selector">
-        <nav id="up-navigation" class="up-nav">
-          <ul>
-            <li class="page_item">
-            <a href="#" title="">月間ランキング
-            </a></li>
-            <li class="page_item">
-            <a href="#" title="">新刊情報
-            </a></li>
-            <li class="page_item">
-            <a href="#" title="">座談会
-            </a></li>
-
-            <li class="page_item">
-            <%= link_to "ログイン", new_user_registration_path, class: 'post' %></li>
-            <li class="page_item">
-            <%= link_to "ログアウト", root_path, class: 'post' %></li>
-          <form role="search" method="get" class="search-form" action="">
-            <input type="search" class="search-field" placeholder="作品名・著者名・出版社名で検索してみよう" value="" name="s">
-            <input type="submit" class="search-submit" value="検索">
-          </form>
-          </ul>
-        </nav>
-      </div>
-
       <div class="left-container">
         <div class="title-bord">
         <h4>BLANK AS OF NOW</h4><h6 style="font-size: 10px; color: black; margin: 0;">NOT YET DECIDED</h6>
@@ -63,12 +30,6 @@
       </div>
 
     </main>
-
-    <footer id="footer">
-      <div class="credits">
-        <p style="font-size:8px;">Copyright 2017 Book Logger(test). All rights reserved.</p>
-      </div>
-    </footer>
   </div>
 </body>
 

@@ -1,0 +1,16 @@
+
+<body>
+      <div class="left-container">
+        <div class="title-bord">
+<div class="">
+  <% @books.each do |book| %>
+    <div class="searchdetail">
+    <a href="/books/<%= book.id %>"></a>
+    <h5><%= book.bookname %></h5><h6><%= book.author %></h6><h6><%= book.publisher %></h6>
+    </div>
+  <% end %>
+</div>
+
+    </main>
+  </div>
+</body>

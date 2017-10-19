@@ -8,12 +8,10 @@ Rails.application.routes.draw do
   end
 
 
+  # resources :books, only: [:index, :show]
   resources :books, only: [:index, :show] do
     collection do
       get 'search_result'
     end
   end
 end
-
-  # get 'signup' => 'user#new'
-  # get   'users/:id'   =>  'users#show'
