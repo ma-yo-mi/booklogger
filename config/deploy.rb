@@ -1,8 +1,9 @@
 # config valid only for current version of Capistrano
-lock "3.9.1"
+# lock "3.9.1"
 
-set :application, "my_app_name"
-set :repo_url, "git@example.com:me/my_repo.git"
+# set :application, "my_app_name"
+# set :repo_url, "git@example.com:me/my_repo.git"
+set :linked_files, %w{ config/secrets.yml }
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -34,3 +35,26 @@ set :repo_url, "git@example.com:me/my_repo.git"
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
+lock '3.9.1'
+
+set :application, 'booklogger'
+set :repo_url,  'git@github.com:ma-yo-mi/booklogger.git'
+
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
+
+set :rbenv_type, :user
+set :rbenv_ruby, '2.3.1'
+
+set :ssh_options, auth_methods: ['publickey'],
+                  keys: ['Users/tech-camp/.ssh/keypairAWS.pem.pem
+
+set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
+set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
+set :keep_releases, 5
+
+after 'deploy:publishing', 'deploy:restart'
+namespace :deploy do
+  task :restart do
+    invoke 'unicorn:restart'
+  end
+end
