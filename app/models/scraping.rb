@@ -2,6 +2,7 @@ class Scraping
 
   require 'open-uri'
   require 'nokogiri'
+  require 'mechanize'
 
 
   def self.books
@@ -39,5 +40,36 @@ class Scraping
     end
   end
 
+
+  def self.database
+    links = []
+    agent = Mechanize.new
+    next_url = ""
+    while true
+      current_page = agent.get("https://www.kinokuniya.co.jp/disp/CSfDispListPage_001.jsp?qsd=true&ptk=01&gtin=&q=&title=&author-key=&publisher-key=&pubdateStart=201709&pubdateEnd=&thn-cod-b=13&ndc-dec-key=&rpp=100&SEARCH.x=51&SEARCH.y=26" + next_url)
+      elements = current_page.search('.heightLine-2 a')
+      elements.each do |ele|
+        links << ele.get_attribute('href')
+      end
+
+     next_link = current_page.at('.newColor a')
+     break unless next_link
+     next_url = next_link.get_attribute('href')
+   end
+   # links.each do |link|
+    get_image('https://www.kinokuniya.co.jp/' + link)
+  end
+end
+
+  def self.get_image
+    agent = Mechanize.new
+    page = agent.get("https://www.kinokuniya.co.jp/disp/CSfDispListPage_001.jsp?qsd=true&ptk=01&gtin=&q=&title=&author-key=&publisher-key=&pubdateStart=201709&pubdateEnd=&thn-cod-b=13&ndc-dec-key=&rpp=100&SEARCH.x=51&SEARCH.y=26")
+    bookname = page.at('.heightLine-2 a')
+    image = page.at('.list_area clearfix img')[:src] if page.at('.list_area clearfix img')
+    binding.pry
+    database = Database.where(bookname: bookname).first_or_initialize
+    database.image = image
+    database.save
+  end
 end
 
