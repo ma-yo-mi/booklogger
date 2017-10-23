@@ -23,9 +23,9 @@ ul {
   margin: 0;
   padding: 0;
 }
-li {
-    display: inline-block;
-}
+/*li {*/
+/*    display: inline-block;*/
+/*}*/
 li a {
     display: block; padding: 0 .4em;
 }
@@ -225,35 +225,81 @@ ul.list li {
 
 /*BOOK INFO PAGE*/
 .full-container {
-  display: inline-flex;
   max-height: 1000px;
-  width: 90%;
-  margin: 2em 0.5em;
+  width: 80%;
+  margin: 2em 8em;
 }
 
-.header_info {
+
+.title-row {
 padding: 0.1em 1em;
-margin: 0.5em 0;
+margin: 1em 0;
+width: 100%;
+height: 80px;
 color: #FFF;
 background: #FF395E;
 border-bottom: solid 6px #6F6F6F;
 box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
 border-radius: 9px;
-}
+float: left;
 
-.header_info h4 {
-  text-align: center;
-}
-.header_info i {
-  text-align: left;
-  color: black;
+  
 }
 
 .imagecontainer {
-  float: left;
+  width: 0%;
+  height: auto;
+  clear: left;
 }
 
-.imagecontainer p {
-  padding: 1em;
+.infocontainer {
+  float: right;
+  width: 400px;
+  display: block;
+  background: orange;
 }
 
+.article-image {
+  width:33%;
+  float:left;
+  text-align: center;
+  margin-left: 4em;
+}
+
+.article-info {
+  width:60%;
+  float:right;
+}
+
+.article-moreinfo {
+ clear: both;
+}
+
+.article-info ul, ol{padding: 0;}
+
+.article-info ul li {
+  position: relative;
+  list-style-type: none!important;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  margin-bottom: 5px;
+  line-height: 1.5;
+  background: #dbebf8;
+  vertical-align: middle;
+  color: #505050;
+  border-radius: 15px 15px 15px 15px;
+  width: 100%;
+  
+}
+
+.article-info ul li:before{
+  content:'';
+  width:1em;
+  height: 1em;
+  background: #fff;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.article-info h5, h6 {
+  margin: 0.3em;
+}
