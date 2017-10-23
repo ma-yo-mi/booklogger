@@ -8,8 +8,9 @@ Rails.application.routes.draw do
   end
 
 
-  # resources :books, only: [:index, :show]
+
   resources :books, only: [:index, :show] do
+    resources :reviews, only: [:new, :create, :edit, :update, :destroy]
     collection do
       get 'search_result'
     end

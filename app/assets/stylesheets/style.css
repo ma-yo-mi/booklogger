@@ -214,17 +214,6 @@ border-radius: 9px;
    width:400px;
    float: left;
  }
- .resultdetail h5 {
-   margin: 2px 0;
- }
- .resultdetail h6 {
-   margin: 0;
-   padding: 0 5px;
- }
-
-
-ul.list {
-}
 
 ul.list li {
   color: black;
@@ -239,7 +228,6 @@ ul.list li {
   display: inline-flex;
   max-height: 1000px;
   width: 90%;
-  max-height:90%;
   margin: 2em 0.5em;
 }
 
@@ -265,6 +253,7 @@ border-radius: 9px;
   float: left;
 }
 
-imagecontainer p {
+.imagecontainer p {
   padding: 1em;
 }
+
