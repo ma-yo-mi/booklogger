@@ -1,14 +1,26 @@
 
   <div class="full-container">
-  <header class="header_info">
+  <header class="header_title">
+    <div class="title-row">
     <i class="fa fa-book fa-4x" aria-hidden="true"></i><h4><%= @book.bookname %></h4>
+    </div>
   </header>
-  <div class="imagecontainer">
-  <p style="text-align: center">
-    <a href="https://www.kinokuniya.co.jp"><img src="https://www.kinokuniya.co.jp<%= @book.image %>" alt="<%= @book.bookname %>"></a></p>
+  <div class="article-image">
+     <a href="https://www.kinokuniya.co.jp"><img src="https://www.kinokuniya.co.jp<%= @book.image %>" alt="<%= @book.bookname %>"></a>
   </div>
+  <div class="article-info">
+  <ul>
+    <li><h5>著者:<%= @book.author %></h5></li>
+    <li><h5>出版社:<%= @book.publisher %></h5></li>
+    <li><h5>出版年月:<%= @book.published_date %></h5></li>
+    <li><h5>価格:<%= @book.price %>円</h5></li>
+  </ul>
   </div>
-
+  <div class="article-moreinfo">
+    <p>あらすじ</p>
+    qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+    <p>著者紹介</p>
+  </div>
     </main>
   </div>
 
