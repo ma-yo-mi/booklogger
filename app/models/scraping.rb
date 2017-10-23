@@ -5,6 +5,7 @@ class Scraping
 
 
   def self.books
+  Book.all.destroy_all
   data = []
   url = 'https://www.kinokuniya.co.jp/disp/CKnRankingPageCList.jsp?dispNo=107002001002&vTp=m'
   charset = nil
@@ -64,5 +65,8 @@ class Scraping
     Database.create(book)
       data << book
     end
+  end
+  
+  def self.details
   end
 end
