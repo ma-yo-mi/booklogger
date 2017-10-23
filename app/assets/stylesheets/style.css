@@ -181,7 +181,7 @@ form.searchbox {
   vertical-align:baseline;
   text-rendering:auto }
 
-/*RESEARCH PAGE*/
+/*RANKING PAGE*/
 .title-bord {
 padding: 0.5em 1em;
 margin: 0.5em 0;
@@ -191,10 +191,29 @@ border-bottom: solid 6px #6F6F6F;
 box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
 border-radius: 9px;
 }
+.title-bord h4 {
+   margin: 0;
+   padding: 0;
+ }
+.rankdetail {
+   width:600px;
+   float: left;
+   border-bottom:2px solid #ACC6AA;
+ }
+ .rankdetail h5 {
+   margin: 2px 0;
+ }
+ .rankdetail h6 {
+   margin: 0;
+   padding: 0 5px;
+ }
 
 
-ul.list {
-}
+/*SEARCH PAGE*/
+.resultdetail {
+   width:400px;
+   float: left;
+ }
 
 ul.list li {
   color: black;
@@ -209,7 +228,6 @@ ul.list li {
   display: inline-flex;
   max-height: 1000px;
   width: 90%;
-  max-height:90%;
   margin: 2em 0.5em;
 }
 
@@ -235,6 +253,7 @@ border-radius: 9px;
   float: left;
 }
 
-imagecontainer p {
+.imagecontainer p {
   padding: 1em;
 }
+

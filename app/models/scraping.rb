@@ -31,8 +31,8 @@ class Scraping
         pre_publisher = p_info.scan(/\w+|[^\s\w]+/)
         publisher = pre_publisher[0].gsub("（","")
       # #image
-      image = node.css('div[@class="listphoto clearfix"]/a img').attr('src').value
-
+      p_image = node.css('div[@class="listphoto clearfix"]/a img').attr('src').value
+      image = p_image.gsub("..","")
       book = {ranking: ranking, title: title, price: price, author: author, published_date: published_date, publisher: publisher, image: image}
       data << book
       product = Book.create(ranking: ranking, bookname: title, price: price, author: author, published_date: published_date, publisher: publisher, image: image)
@@ -50,16 +50,16 @@ class Scraping
   
   doc = Nokogiri::HTML.parse(html, nil,charset)
     doc.xpath('//div[@class="list_area clearfix pb10"]').each do |node|
-      p bookname = node.css('h3').text.gsub(/\r\n/,"").strip!
-      p author = node.css('p').text.gsub(/\r\n|【著】|/,"").strip!
-      p price = node.css('span[@class="sale_price"]').text.gsub(/[^\d]/, "").to_i
+      bookname = node.css('h3').text.gsub(/\r\n/,"").strip!
+      author = node.css('p').text.gsub(/\r\n|【著】|/,"").strip!
+      price = node.css('span[@class="sale_price"]').text.gsub(/[^\d]/, "").to_i
       p_info = node.css('ul[@class="mb05"]/li').first.inner_text
         pre_date = p_info.scan(/\w+|[^\s\w]+/)
-        p published_date = (pre_date[1] + pre_date[3]).to_i
+        published_date = (pre_date[1] + pre_date[3]).to_i
         pre_publisher = p_info.scan(/\w+|[^\s\w]+/)
-        p publisher = pre_publisher[0].gsub("（","")
+        publisher = pre_publisher[0].gsub("（","")
       p_image = node.css('div[@class="listphoto clearfix"]/a img').attr('src').value
-        p image = p_image.sub!(/../, 'https://www.kinokuniya.co.jp')
+       image = p_image.slice(0..1)
         
     book = {bookname: bookname, price: price, author: author, published_date: published_date, publisher: publisher, image: image}
     Database.create(book)
@@ -67,6 +67,5 @@ class Scraping
     end
   end
   
-  def self.details
-  end
+
 end
