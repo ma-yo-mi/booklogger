@@ -1,20 +1,22 @@
+      <div class="fullcontainer">
+        <h4>検索結果の表示：</h4>
+        <div class="title-bord">
+        <div class="results">
+        <ul class="list">
+        <% @books.each do |book| %>
+          <li class="results-list">
+          <div class="rankdetail">
+          <div class="rankdetailbox">
+            <h5><%= book.bookname %></h5><h5>著者：<%= book.author %></h5><h6>出版日：<%= book.published_date %></h6>
+          </div>
+          </div>
+          </li>
+        <% end %>
+        </ul>
+        </div>
+        </div>        
+      </div>
 
-<body>
-     <!--  <div class="left-container">
-        <div class="title-bord-row">
- --><div class="searchcontainer">
-  <% @books.each do |book| %>
-    <div class="searchdetail">
-    <ul class="searchdetail">
-    <a href="/books/<%= book.id %>"></a>
-      <li><h6><%= book.bookname %></h6></li><h3 style="color: #81AE64;">　/　</h3>
-      <li><h6><%= book.author %></h6></li><h3 style="color: #81AE64;">　/　</h3>
-      <li><h6><%= book.publisher %></h6></li>
-    </ul>
-    </div>
-  <% end %>
-</div>
+    <!--</main>-->
+  <!--</div>-->
 
-    </main>
-  </div>
-</body>
