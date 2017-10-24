@@ -172,9 +172,6 @@ form.searchbox {
   width: 44%;
   max-height:90%;
   margin: 2em 0.5em;
-/*  background: #DDEEDF;*/
-
-  /*border: medium solid #DDEEDF;*/
   display:inline-block;
   letter-spacing:normal;
   word-spacing:normal;
@@ -210,17 +207,28 @@ border-radius: 9px;
 
 
 /*SEARCH PAGE*/
+.result-bord {
+padding: 0.5em 1em;
+margin: 0.5em 0;
+background: #AEE8E6;
+border-radius: 9px;
+text-align: center;
+}
+
 .resultdetail {
    width:400px;
+   height:200px;
    float: left;
+   justify-content: space-between;
  }
 
 ul.list li {
   color: black;
   min-width: 350px;
+  margin: 5px;
   display: inline-block;
   text-align: center;
-  background: white;
+  background: #F5FAC8;
 }
 
 /*BOOK INFO PAGE*/
