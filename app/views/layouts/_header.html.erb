@@ -22,11 +22,10 @@
             <li class="page_item">
             <%= link_to "ログイン", new_user_registration_path, class: 'post' %></li>
             <li class="page_item">
-            <%= link_to "ログアウト", root_path, class: 'post' %></li>
-<!--           <form role="search" method="get" class="search-form" action="">
-            <input type="search" class="search-field" placeholder="作品名・著者名・出版社名で検索してみよう" value="" name="s">
-            <input type="submit" class="search-submit" value="検索">
-          </form> -->
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+            <li class=" page_item">
+              <%= link_to "マイページ", user_path(current_user) %></li>
+              <!--<a href="/users/<%=current_user.id %>">マイページ</a></li>-->
           <%= form_tag  search_result_books_path, :method => 'get' do %>
             <p>
               <%= text_field_tag :search, params[:search] %>
