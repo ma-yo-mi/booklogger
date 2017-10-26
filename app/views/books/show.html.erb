@@ -2,24 +2,27 @@
   <div class="full-container">
   <header class="header_title">
     <div class="title-row">
-    <i class="fa fa-book fa-4x" aria-hidden="true"></i><h4><%= @book.bookname %></h4>
+    <h3><%= @database.bookname %></h3>
     </div>
   </header>
   <div class="article-image">
-     <a href="https://www.kinokuniya.co.jp"><img src="https://www.kinokuniya.co.jp<%= @book.image %>" alt="<%= @book.bookname %>"></a>
+     <a href="https://www.kinokuniya.co.jp"><img src="<%= @database.image %>" alt="<%= @database.bookname %>"></a>
   </div>
   <div class="article-info">
   <ul>
-    <li><h5>著者:<%= @book.author %></h5></li>
-    <li><h5>出版社:<%= @book.publisher %></h5></li>
-    <li><h5>出版年月:<%= @book.published_date %></h5></li>
-    <li><h5>価格:<%= @book.price %>円</h5></li>
+    <li><h5>著者:<%= @database.author %></h5></li>
+    <li><h5>出版社:<%= @database.publisher %></h5></li>
+    <li><h5>出版年月:<%= @database.published_date %></h5></li>
+    <li><h5>価格:<%= @database.price %>円</h5></li>
   </ul>
   </div>
   <div class="article-moreinfo">
     <p>あらすじ</p>
-    qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+    <%= @database.summary %>
+    </div>
+    <div class="article-moreinfo">
     <p>著者紹介</p>
+    <%= @database.author_data %>
   </div>
     </main>
   </div>
