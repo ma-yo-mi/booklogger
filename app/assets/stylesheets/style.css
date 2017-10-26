@@ -52,7 +52,12 @@ body {
   height: 100%;
   border-bottom: double 10px #8BC34A;
   overflow-y: visible;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  }
+  
+  #header a {
+    color: black;
+  }
 .header h1 {
   display: block;
   width: 100%;
@@ -131,41 +136,34 @@ transform: rotate(180deg); }
   width: 100%;
   height: 60px;
   padding: 0 1em;
-  margin: 0 0 50px 0; }
+  margin: 0 0 50px 0; 
+}
 .up-nav ul li {
   padding: 0 2em;
   display: block;
-  float: left; }
+  float: left; 
+}
 
-form.search-form { position: absolute;
-  top: 0%;
-  left: 35%;
-  right: 0;
-  bottom: 0;
-  margin: 0 auto;
-  text-align: center;
-  float: right;
-  width: 50%;
-  height: 80px;
-  padding: 0 2em;
-  display: block;
-  overflow-y: hidden;
-  overflow-x: scroll;
-  white-space: nowrap; }
-form.search-form input.search-field {
-  width: 60%;
-  margin: 0 0 0 5em; }
+nav, form {display: inline;}
+
 /*form.search-form input.search-submit {
   margin: 0 auto; padding: 0 20px; background: #8BC34A; color: #fff; }*/
 /*form.search-form input.search-submit {
   display: none; }*/
-form.searchbox {
-  display:inline-block;
+.up-navigation form {
+  display:inline;
   letter-spacing:normal;
   word-spacing:normal;
   vertical-align:baseline;
   text-rendering:auto}
-
+  
+.up-navigation form, p {
+  display:inline;
+}
+#search {
+  width: 360px;
+  margin-left: 320px;
+}
 .left-container, .middle-container, .right-container {
   float: left;
   max-height: 1000px;
