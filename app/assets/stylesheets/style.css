@@ -16,14 +16,14 @@ color: #fff;
 }
 a:hover { color: #000; }
 
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-li {
-    display: inline-block;
-}
+/*ul {*/
+/*  list-style: none;*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*}*/
+/*li {*/
+/*    display: inline-block;*/
+/*}*/
 li a {
     display: block; padding: 0 .4em;
 }
@@ -41,7 +41,7 @@ body {
 #main {
   position: static;
   margin: 0;
-  padding: 0 0 0 300px; }
+  padding: 0 0 0 300px;}
 
 #header {
   position: fixed;
@@ -85,14 +85,14 @@ body {
 
 
 #footer {
-  border-top: double 10px #8BC34A;;
   clear: both;
   padding: 0 0 0 300px;
-  background: #fff; }
+  background:#283E56; }
 .credits {
   padding: 1em 2em;
   text-align: center; }
 .credits p {
+  color: #fff;
   margin: 0; }
 
 
@@ -142,6 +142,7 @@ transform: rotate(180deg); }
   display: block;
   float: left; 
 }
+.up-nav a {padding: 0 2em;}
 
 nav, form {display: inline;}
 
@@ -187,16 +188,6 @@ border-radius: 9px;
 }
 
 
-ul.list {
-}
-
-ul.list li {
-  color: black;
-  min-width: 350px;
-  display: inline-block;
-  text-align: center;
-  background: white;
-}
 
 /*BOOK INDEX PAGE*/
 .indextitle-bord {
@@ -212,6 +203,27 @@ border-radius: 9px;
   margin: 0 auto;
 }
 
+.rankdetailbox {
+  text-align: start;
+  padding-left: 1em;
+}
+
+ul.ranking-list {padding:0 20px;}
+li.ranks  {
+  list-style: none;
+  color: black;
+  width: 100%;
+  display: list-item;
+  border-bottom: 1px #cdcdcd solid;
+  background: #fffacd;
+  /*background-image: -webkit-linear-gradient(left, transparent, #000 25%, #000 75%, transparent);*/
+  background-image: linear-gradient(to right, transparent, orange 20%, #fffacd 80%, transparent);
+
+}
+
+li.ranks h3 {margin:0;}
+li.ranks h5 {padding:0 0 0 4em; margin: 0.1em 0;}
+li.ranks h6 {padding:0 0 0 4.6em;}
 /*BOOK INFO PAGE*/
 .full-container {
   max-height: 1000px;
@@ -241,7 +253,7 @@ float: left;
   clear: left;
 }
 
-.infocontainer {
+.infocontainer {fe
   float: right;
   width: 400px;
   display: block;
