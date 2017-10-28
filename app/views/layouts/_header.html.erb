@@ -24,14 +24,14 @@
             <li class="page_item">
             <% if !user_signed_in? %>
             <%= link_to "新規登録", new_user_registration_path %></li>
-            <%= link_to "ログイン", new_user_registration_path, class: 'post' %></li>
+            <%= link_to "ログイン", user_session_path, class: 'post' %></li>
             <% else %>
             <li class="page_item">
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
             <li class=" page_item">
               <%= link_to "マイページ", user_path(current_user.id) %></li>
             <% end %>
-          <%= form_tag  search_result_books_path, :method => 'get' do %>
+          <%= form_tag search_result_books_path, :method => 'get' do %>
             <p>
               <%= text_field_tag :search, params[:search] %>
               <%= submit_tag "検索", :name => nil %>
