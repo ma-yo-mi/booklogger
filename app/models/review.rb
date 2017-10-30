@@ -4,5 +4,6 @@ class Review < ActiveRecord::Base
   
     validates :user_id, presence: true
     validates :book_id, presence: true
+    validates :review, presence: { message: "レビューがありません。記述してください" }
 
 end
