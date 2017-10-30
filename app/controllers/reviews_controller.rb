@@ -9,8 +9,9 @@ class ReviewsController < ApplicationController
     def create
         @review = Review.create(create_params)
         if @review.valid?
-            review.save!
-            redirect_to_book_review_path
+            review.save
+            redirect_to_book_review_path(book_id)
+            flash[:notice] = "レビューは保存されました"
         end
     end
 
@@ -23,7 +24,8 @@ class ReviewsController < ApplicationController
     def destroy
         review = review.find(params[:id])
         if review destroy?
-        redirect_to_book_review_path
+            redirect_to_book_review_path(book_id)
+            flash[:notice] ="レビューは削除されました"
         end
     end
 
