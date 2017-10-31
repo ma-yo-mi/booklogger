@@ -5,7 +5,8 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book = Book.find(params[:id])
+    # binding.pry
+    # @book = Book.find(params[:id])
     @database = Database.find(params[:id])
   end
 

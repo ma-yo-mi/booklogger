@@ -15,4 +15,11 @@ Rails.application.routes.draw do
       get 'search_result'
     end
   end
+  
+  resources :databases do
+    resources :reviews, only: [:new, :create, :edit, :update, :destroy]
+    collection do
+      get 'search_result'
+    end
+  end
 end
