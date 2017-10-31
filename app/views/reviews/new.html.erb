@@ -19,12 +19,12 @@ TEST　REVIEWS#create
 <!--                    <div class="box">-->
 <!--                      <div class="box__cell w80">-->
 <!--                        <div class="thumbnail thumbnail--photo">-->
-<!--                          <div class="thumbnail__figure" style="background-image: url(<%= @database.image %>);"></div>-->
+<!--                          <div class="thumbnail__figure" style="background-image: url(<%= @book.image %>);"></div>-->
 <!--                        </div>-->
 <!--                      </div>-->
 <!--                      <div class="box__cell pl1em">-->
 <!--                        <h3 class="text-xsmall text-overflow text-break color-sub">-->
-<!--                          <%= @database.bookname %>-->
+                          <%= @book.bookname %>
 <!--                        </h3>-->
 <!--                        <p class="text-xsmall">-->
 <!--                        </p>-->
@@ -36,10 +36,11 @@ TEST　REVIEWS#create
 <!--              </ul>-->
 <!--            </div>-->
 <!--          </div>-->
-<!--          <%= form_for [@database, @review] do |f| %>-->
+
+<!--          <%= form_for [@book, @review] do |f| %>-->
 <!--          <div style="margin: 8px 0">-->
-<!--            <%= f.label :rate, '評価', style: { 'margin-right' => 8 } %>-->
-<!--            <%= f.number_field :rate, placeholder: '評価', value: 1, max: 10, min: 1, html:{ class: "search__query", style: 'text-align: right;' } %>-->
+<!--            <%= f.label :score, '評価', style: { 'margin-right' => 8 } %>-->
+<!--            <%= f.number_field :score, placeholder: '評価', value: 1, max: 10, min: 1, html:{ class: "search__query", style: 'text-align: right;' } %>-->
 <!--          </div>-->
 <!--          <div style="margin: 8px 0">-->
 <!--            <%= f.text_area :review, placeholder: 'レビューを書いてね！', style: 'width: 100%;height: 300px;' %>-->
