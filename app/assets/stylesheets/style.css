@@ -304,3 +304,6 @@ float: left;
 .article-info h5, h6 {
   margin: 0.3em;
 }
+
+/*REVIEW PAGE*/
+#review_container {padding-left: 3.5em;}
