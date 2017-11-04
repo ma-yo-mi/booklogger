@@ -1,4 +1,7 @@
 class Database < ActiveRecord::Base
+  has_many :reviews
+
+
   class << self
     def search(search)
       rel = Database.all
