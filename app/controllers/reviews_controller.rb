@@ -5,7 +5,6 @@ class ReviewsController < ApplicationController
         @user = current_user
         @book = Database.find(params[:book_id])
         @review = Review.new
-        # review = @review
     end
     
     def create
@@ -21,6 +20,10 @@ class ReviewsController < ApplicationController
 
 
     def update
+        @review = Review.find(params[:id])
+        @review.create_params
+        redirect_to database_review_path
+        flash[:notice] = "レビューを投稿しました"
     end
 
 
@@ -35,6 +38,7 @@ class ReviewsController < ApplicationController
 
     private
     def create_params
-        params.require(:review).permit(:score, :review).merge(book_id: params[:book_id])
+        params.require(:review).permit(:score, :review)
+        # .merge(book_id: params[:book_id])
     end
 end
