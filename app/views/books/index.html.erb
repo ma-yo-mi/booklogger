@@ -7,14 +7,16 @@
         <div class="indextitle-bord">
         <h4>月間ランキング TOP5</h4><h6 style="font-size: 14px; color: black; margin: 0;">紀伊国屋書店マンスリーランキングより</h6>
         </div>
-        <ul class="ranking-list">
         <% @books.each do |book| %>
           <li class="ranks">
           <div class="rankdetail">
           <div class="rankdetailbox">
-          <h3><%= book.ranking %>位</h3>
-          <a href="/books/<%= book.id %>"></a>
-          <h5><%= book.bookname %></h5><h6><%= book.author %></h6><h6><%= book.publisher %></h6>
+            <% @books.each do |item| %>
+                <h3><%= item.ranking %>位</h3>
+                <h5><%= item.bookname%></h5>
+                <h6><%= item.author %></h6>
+                <h6><%= item.publisher %></h6>
+            <% end %>
           </div>
           </div>
           </li>
