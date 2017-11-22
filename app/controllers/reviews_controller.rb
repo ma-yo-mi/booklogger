@@ -3,12 +3,12 @@ class ReviewsController < ApplicationController
     
     def new
         @user = current_user
-        @book = Database.find(params[:book_id])
+        @book = Database.find(params[:database_id])
         @review = Review.new
     end
     
     def create
-        
+        binding.pry
         @review = Review.create(create_params)
         # if @review.valid?
             @review.save
@@ -38,7 +38,6 @@ class ReviewsController < ApplicationController
 
     private
     def create_params
-        params.require(:review).permit(:score, :review)
-        # .merge(book_id: params[:book_id])
+        params.require(:review).merge(database_id: params[:database_id])
     end
 end
