@@ -1,0 +1,29 @@
+<div id="review_container">
+   💬 (これまでのレビュー数合計を入力) ★（これまでのレビュー評価平均点を入力）
+   
+   <div class="review clearfix">
+     <div class="thumbnail">
+     </div>
+     <div class="review_contents">
+       <div class="review_header clearfix">
+         <%= @user.handlename %>
+         <div class="rank">
+               <!--<div class="star-rating-front" style="width: 50%">★★★★★</div>-->
+               <!--<div class="star-rating-back">★★★★★</div>-->
+        </div>
+         <div class="my_review">
+         <%= form_for [@book, @review] do |f| %>
+         <%= f.text_area :review, placeholder: 'この本のレビューを書く', style: 'width: 80%;height: 400px;' %>
+         <% end %>
+         </div>
+         <div class="row">
+           <%= form_for [@book, @review] do |f| %>
+           <%= f.submit"投稿",class: 'btn btn-primary' %>
+           <% end %>
+           <%= button_tag type: "delete", class: "btn btn--block" do %>削除
+           <% end %>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
