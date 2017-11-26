@@ -16,7 +16,7 @@ def search_result
   # @books = Book.find_by_sql( "SELECT `books`.* FROM `books` WHERE ((bookname LIKE(?) OR (author LIKE(?) OR (publisher LIKE(?)))", "%#{keyword}%","%#{keyword}%","%#{keyword}%")
 # final use for search?
 sql = "select * from books where bookname LIKE(?) OR author LIKE(?) OR publisher LIKE(?)"
-@books = Database.find_by_sql([sql, keyword, keyword, keyword])
+@databases = Database.find_by_sql([sql, keyword, keyword, keyword])
 
 
 
