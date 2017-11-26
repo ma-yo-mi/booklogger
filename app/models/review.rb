@@ -1,6 +1,5 @@
  class Review < ActiveRecord::Base
       belongs_to :user
-      belongs_to :book
       belongs_to :database
     
       validates :user_id, presence: true

@@ -6,23 +6,19 @@
      </div>
      <div class="review_contents">
        <div class="review_header clearfix">
-         <%= @user.handlename %>
+        <%= @database.bookname %> / <%= @database.author %>
+        <%= @user.handlename %>
          <div class="rank">
-               <!--<div class="star-rating-front" style="width: 50%">★★★★★</div>-->
-               <!--<div class="star-rating-back">★★★★★</div>-->
+               <div class="star-rating-front" style="width: 50%">★★★★★</div>
+               <div class="star-rating-back">★★★★★</div>
         </div>
+        
+         <%= form_for [@database, @review] do |f| %>
          <div class="my_review">
-         <%= form_for [@book, @review] do |f| %>
-         <%= f.text_area :review, placeholder: 'この本のレビューを書く', style: 'width: 80%;height: 400px;' %>
-         <% end %>
+            <%= f.text_area :review, placeholder: 'この本のレビューを書く', style: 'width: 80%;height: 400px;' %>
          </div>
-         <div class="row">
-           <%= form_for [@book, @review] do |f| %>
-           <%= f.submit"投稿",class: 'btn btn-primary' %>
+           <%= f.submit "投稿",class: 'btn btn-primary' %>
            <% end %>
-           <%= button_tag type: "delete", class: "btn btn--block" do %>削除
-           <% end %>
-         </div>
        </div>
      </div>
    </div>
