@@ -1,4 +1,5 @@
 class Book < ActiveRecord::Base
+
   class << self
     def search(search)
       rel = Book.order("id")
